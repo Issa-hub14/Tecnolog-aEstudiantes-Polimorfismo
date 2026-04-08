@@ -33,4 +33,16 @@ public class Desarrollo extends Materia {
         
     }
     
+    public void incrementarDesarrollo(double incremento) {
+        notaHardware += incremento;
+        notaSoftware += incremento;
+
+        if (notaHardware > 5.0) {
+            notaHardware = 5.0;
+        }
+
+        if (notaSoftware > 5.0) {
+            notaSoftware = 5.0;
+        }
+    }
 }
