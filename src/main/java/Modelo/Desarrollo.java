@@ -33,6 +33,11 @@ public class Desarrollo extends Materia {
         
     }
     
+    @Override 
+    public void incrementar(double incremento) {
+        incrementarDesarrollo(incremento);
+    }
+    
     public void incrementarDesarrollo(double incremento) {
         notaHardware += incremento;
         notaSoftware += incremento;

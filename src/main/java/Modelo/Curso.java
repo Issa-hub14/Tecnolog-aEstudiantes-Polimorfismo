@@ -9,7 +9,8 @@ package Modelo;
  * @author isabe
  */
 public class Curso {
- private Estudiante[] estudiantes;
+
+    private Estudiante[] estudiantes;
     private int contador;
 
     public Curso(int cantidad) {
@@ -82,4 +83,9 @@ public class Curso {
 
     }
 
+    public void incrementoNotas(double incremento) {
+        for (int i = 0; i < contador; i++) {
+            estudiantes[i].getDesarrollo().incrementar(incremento);
+        }
+    }
 }

@@ -9,13 +9,14 @@ package Modelo;
  * @author isabe
  */
 public class Estudiante {
+
     private String nombre;
     private int codigo;
-    
+
     private Materia matematicas;
     private Materia desarrollo;
-    
-    public Estudiante(String nombre, int codigo, Materia matematicas,Materia desarrollo) {
+
+    public Estudiante(String nombre, int codigo, Materia matematicas, Materia desarrollo) {
         validarCodigo(codigo);
 
         this.nombre = nombre;
@@ -23,14 +24,14 @@ public class Estudiante {
         this.matematicas = matematicas;
         this.desarrollo = desarrollo;
     }
-    
-     private void validarCodigo(int codigo) {
+
+    private void validarCodigo(int codigo) {
         if (codigo <= 21000) {
             throw new IllegalArgumentException("Código debe ser mayor a 21000");
         }
     }
-     
-     public String getNombre() {
+
+    public String getNombre() {
         return nombre;
     }
 
@@ -45,7 +46,11 @@ public class Estudiante {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-    
+
+    public Materia getDesarrollo() {
+        return desarrollo;
+    }
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + " | Codigo: " + codigo + "\n"

@@ -32,4 +32,7 @@ public class Materia {
             throw new IllegalArgumentException("La nota debe estar entre 0 y 5");
         }
     }
+    
+    public void incrementar(double incremento) {
+    }
 }
