@@ -346,7 +346,7 @@ public class VistaTecnologia extends javax.swing.JFrame {
             jTextArea1.setText(mensaje);
 
         } catch (Exception e) {
-            jTextArea1.setText("Error: " + e.getMessage());
+            jTextArea1.setText("Deben ser números.");
         }
     }//GEN-LAST:event_agregarActionPerformed
 
@@ -420,11 +420,15 @@ public class VistaTecnologia extends javax.swing.JFrame {
             }
 
             double notaLim = Double.parseDouble(notaLimite.getText());
+            if (notaLim < 0 || notaLim > 5) {
+                jTextArea1.setText("La nota límite debe estar entre 0 y 5.");
+                return;
+            }
 
             jTextArea1.setText(curso.listaMayorA(notaLim));
 
         } catch (Exception e) {
-            jTextArea1.setText("Error: " + e.getMessage());
+            jTextArea1.setText("La nota límite debe ser un número.");
         }
     }//GEN-LAST:event_filtrarActionPerformed
 
@@ -443,7 +447,7 @@ public class VistaTecnologia extends javax.swing.JFrame {
             jTextArea1.setText("Notas actualizadas:\n\n" + curso.mostrarEstudiantes());
 
         } catch (Exception e) {
-            jTextArea1.setText("Error: " + e.getMessage());
+            jTextArea1.setText("El incremento debe ser un número.");
         }
     }//GEN-LAST:event_incrementarNotaActionPerformed
 
