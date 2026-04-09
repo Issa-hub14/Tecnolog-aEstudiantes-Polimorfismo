@@ -23,6 +23,11 @@ public class Materia {
         return nota;
     }
 
+    public void setNota(double nota) {
+        validarNota(nota);
+        this.nota = nota;
+    }
+
     public double calcularDefinitiva() {
         return nota;
     }
@@ -32,7 +37,7 @@ public class Materia {
             throw new IllegalArgumentException("La nota debe estar entre 0 y 5");
         }
     }
-    
+
     public void incrementar(double incremento) {
     }
 }

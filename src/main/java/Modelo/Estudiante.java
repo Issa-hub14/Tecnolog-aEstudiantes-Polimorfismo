@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author isabe
  */
-public class Estudiante extends Persona{
+public class Estudiante extends Persona {
 
     private Materia matematicas;
     private Materia desarrollo;
@@ -29,6 +29,10 @@ public class Estudiante extends Persona{
 
     public Materia getDesarrollo() {
         return desarrollo;
+    }
+
+    public Materia getMatematicas() {
+        return matematicas;
     }
 
     @Override
