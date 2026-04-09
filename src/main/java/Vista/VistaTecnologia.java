@@ -314,7 +314,23 @@ public class VistaTecnologia extends javax.swing.JFrame {
             }
 
             String nom = nombre.getText();
-            int cod = Integer.parseInt(codigo.getText());
+            if (nom.isEmpty()) {
+                jTextArea1.setText("Debes ingresar el nombre.");
+                return;
+            }
+
+            int cod;
+            try {
+                cod = Integer.parseInt(codigo.getText().trim());
+            } catch (NumberFormatException e) {
+                jTextArea1.setText("El código debe ser un número entero.");
+                return;
+            }
+
+            if (curso.existeCodigo(cod)) {
+                jTextArea1.setText("Ese código ya está registrado.");
+                return;
+            }
 
             double notaMate = Double.parseDouble(notaMatematicas.getText());
             double notaSoft = Double.parseDouble(notaSoftware.getText());
@@ -350,13 +366,17 @@ public class VistaTecnologia extends javax.swing.JFrame {
         // TODO add your handling code here:  
         try {
             int cantidad = Integer.parseInt(Cantidad.getText());
+            if (cantidad <= 0) {
+                jTextArea1.setText("La cantidad debe ser mayor que 0.");
+                return;
+            }
 
             curso = new Curso(cantidad);
 
             jTextArea1.setText("Curso creado para " + cantidad + " estudiantes.");
 
         } catch (Exception e) {
-            jTextArea1.setText("Error: " + e.getMessage());
+            jTextArea1.setText("La cantidad debe ser un número.");
         }
 
     }//GEN-LAST:event_crearCursoActionPerformed
@@ -468,7 +488,7 @@ public class VistaTecnologia extends javax.swing.JFrame {
         } catch (Exception e) {
             jTextArea1.setText("Error: " + e.getMessage());
         }
-        
+
     }//GEN-LAST:event_modificarNotaActionPerformed
 
     /**

@@ -32,6 +32,15 @@ public class Curso {
         return "No se pueden agregar más estudiantes.";
     }
 
+    public boolean existeCodigo(int codigo) {
+        for (int i = 0; i < contador; i++) {
+            if (estudiantes[i].getCodigo() == codigo) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void ordenarAscendente() {
 
         for (int i = 0; i < contador - 1; i++) {
