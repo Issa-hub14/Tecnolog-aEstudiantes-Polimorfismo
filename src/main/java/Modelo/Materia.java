@@ -23,6 +23,10 @@ public class Materia {
         return nota;
     }
 
+    public double mostrarNota() {
+        return nota;
+    }
+
     public void setNota(double nota) {
         validarNota(nota);
         this.nota = nota;

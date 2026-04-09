@@ -38,7 +38,7 @@ public class Estudiante extends Persona {
     @Override
     public String toString() {
         return "Nombre: " + nombre + " | Codigo: " + codigo + "\n"
-                + "Nota Desarrollo: " + desarrollo.calcularDefinitiva() + " - Nota Matematicas: " + matematicas.calcularDefinitiva() + "\n"
+                + "Nota Desarrollo: " + desarrollo.mostrarNota() + " - Nota Matematicas: " + matematicas.mostrarNota() + "\n"
                 + " - Definitiva: " + calcularDefinitiva()
                 + " - " + aprobacion();
     }

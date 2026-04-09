@@ -23,13 +23,15 @@ public class Desarrollo extends Materia {
         this.notaHardware = notaHardware;
     }
 
-    public double promedio() {
-        return (notaSoftware + notaHardware) / 2;
+    @Override
+    public double mostrarNota() {
+        double promedio = (notaSoftware + notaHardware) / 2;
+        return Math.round(promedio * 100.0) / 100.0;
     }
 
     @Override
     public double calcularDefinitiva() {
-        double definitiva = promedio() * 0.55;
+        double definitiva = mostrarNota() * 0.55;
         return Math.round(definitiva * 100.0) / 100.0;
 
     }
