@@ -8,39 +8,19 @@ package Modelo;
  *
  * @author isabe
  */
-public class Estudiante {
-
-    private String nombre;
-    private int codigo;
+public class Estudiante extends Persona{
 
     private Materia matematicas;
     private Materia desarrollo;
 
     public Estudiante(String nombre, int codigo, Materia matematicas, Materia desarrollo) {
-        validarCodigo(codigo);
-
-        this.nombre = nombre;
-        this.codigo = codigo;
+        super(nombre, codigo);
         this.matematicas = matematicas;
         this.desarrollo = desarrollo;
     }
 
-    private void validarCodigo(int codigo) {
-        if (codigo <= 21000) {
-            throw new IllegalArgumentException("Código debe ser mayor a 21000");
-        }
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public int getCodigo() {
-        return codigo;
     }
 
     public void setCodigo(int codigo) {
