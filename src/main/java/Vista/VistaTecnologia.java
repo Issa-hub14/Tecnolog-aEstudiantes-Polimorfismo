@@ -468,6 +468,7 @@ public class VistaTecnologia extends javax.swing.JFrame {
         } catch (Exception e) {
             jTextArea1.setText("Error: " + e.getMessage());
         }
+        
     }//GEN-LAST:event_modificarNotaActionPerformed
 
     /**
